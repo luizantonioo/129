@@ -1,0 +1,32 @@
+body{
+    background-color: red ;
+}
+h1{
+    color: #00008B ;
+    background-color: grey ;
+}
+#showSketch{
+    float: right; 
+}
+canvas{
+    border: 5px solid white;
+    border-radius: 20px;
+    animation-name:brilho ;
+    animation-duration:6s ;
+    animation-iteration-count: infinite;
+    margin-top: 100px;
+}
+@keyframes brilho{
+    from{box-shadow : 1px 1px 38px green;}
+    to{box-shadow: 1px 1px 38px blue;}
+}
+p{
+font-size:25px ;
+padding-top:10px ;
+}
+
+
+
+
+
+

@@ -7,13 +7,40 @@ background-color: gray;
 
 }
 #time{
-    font-size: 11px;
-    float:right;
-    margin-right:20px;
-
+font-size: 11px;
+float:right;
+margin-right:20px;
 }
 #showSketch{
 float:right;
-
 }
-
+canvas{
+border:5px solid white;
+border-radius:20px;
+margin-top:150px;
+box-shadow:5px 5px 5px gray;
+box-shadow: 1px 1px 38px white;
+animation-name: Destaque0animação;
+animation-duration: 6s;
+animation-iteration-count:infinite;
+}
+@keyframes Destaque0animação{
+from {box-shadow: 1px 1px 38px black ;}
+to {box-shadow: 1px 1px 38px white;}
+}
+p,span{
+ padding-top:10px;
+font-family: 'Arial',serif;
+font-size:25px; 
+  }
+#score{
+font-size:35px;
+margin-left:20px;
+}
+#time{
+font-size:35px;
+float:right;
+margin-right:20px; 
+}
+/*Feito a mão por luiz:)...eu somente digitei tudo isso:) 
+e serio fiz a mão!!*/

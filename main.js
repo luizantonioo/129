@@ -41,98 +41,53 @@ function updateCanvas() {
     sketch = quickDrawDataset[randomNumber];
     document.getElementById('sketchName').innerHTML = 'Esboço a ser desenhado: ' + sketch;
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  function preload() {
+    classifier = ml5.imageClassifier('DoodleNet');
+  }
+  function setup() {
+    canvas = createCanvas(280, 280);
+    canvas.center();
+    background("gray");
+    canvas.mouseReleased(classifyCanvas);
+  }
+  function draw() {
+    strokeWeight(10);
+    stroke(0);
+    if (mouseIsPressed) {
+      line(pmouseX, pmouseY, mouseX, mouseY);
+    }
+checkSketch() 
+if(drawnSketch == "set"){
+answerHolder = "set"
+score++;
+document.getElementById('score').innerHTML = 'pontos :' + score;
+}
+  }
+function classifyCanvas() {
+classifier.classify(canvas, gotResult);
+}
+function gotResult(error, results) {
+ if (error) {
+ console.error(error);
+ }
+console.log(results);
+drawnSketch = results[0].label;
+document.getElementById('label').innerHTML = 'esboço: ' + drawnSketch.replace("_", " ");
+document.getElementById('confidence').innerHTML = 'Precisão: ' + Math.round(results[0].confidence * 100) + '%';
+ }
+    function checkSketch(){
+timerCounter++;
+document.getElementById('time').innerHTML = 'tempo restante:' + timerCounter; 
+console.log(timerCounter)
+if(timerCounter > 900){
+timerCounter = 0;
+timerCheck = "completed"
+}
+if(timerCheck =="completed" || answerHolder == "set"){
+timerCheck = "";
+answerHolder = "";
+updateCanvas();
+}}
+//Feito por Luiz:)))
+//Feito a mão sem copiar .....juro:<
+//:)byee..
